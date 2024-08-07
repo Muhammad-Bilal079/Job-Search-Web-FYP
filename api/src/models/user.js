@@ -93,25 +93,25 @@ const userSchema = new mongoose.Schema({
     },
     currentLocation: {
       type: String,
-      required: false,
+      required: true,
       trim: true,
       maxlength: [100, 'Current location cannot exceed 100 characters'],
     },
     profilePicture: {
       type: String,
       required: false,
-    //   validate: {
-    //     validator: validator.isURL,
-    //     message: 'Profile picture must be a valid URL',
-    //   },
+      validate: {
+        validator: validator.isURL,
+        message: 'Profile picture must be a valid URL',
+      },
     },
     resume: {
       type: String,
       required: false,
-    //   validate: {
-    //     validator: validator.isURL,
-    //     message: 'Resume must be a valid URL',
-    //   },
+      validate: {
+        validator: validator.isURL,
+        message: 'Resume must be a valid URL',
+      },
     },
     professionalSummary: {
       type: String,
